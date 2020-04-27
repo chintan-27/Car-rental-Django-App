@@ -1,0 +1,190 @@
+.head{
+  height: 100vh;
+  width: 100%;
+  background: linear-gradient(to right,#98d6ea,#bae5e5,#f3d1f4);
+}
+.h-img{
+  width:100px;
+  height: 70px;
+}
+.title{
+  font-family: 'Viga';
+  position: absolute;
+  font-size: 100px;
+  letter-spacing: 10px;
+  color: #2c003e;
+  transform: translateX(500px) translateY(100px);
+}
+
+.brand{
+  position: absolute;
+  transform: translateX(100px) translateY(-50px);
+  font-family: 'Viga';
+  color: #2c003e;
+}
+.rentt{
+  position: absolute;
+  font-family: 'Viga';
+  letter-spacing: 10px;
+  transform: translateY(500px);
+  color:#216353;
+  font-size: 100px;
+  opacity: 0;
+  transition: 1s ease;
+}
+.register:hover,
+.register:active{
+  text-decoration: none;
+  color:#2c003e;
+}
+.rent:hover,
+.rent:active{
+  text-decoration: none;
+  color:#2c003e;
+}
+.rent:hover .rentt,
+.rent:active .rentt{
+  transform: translateY(-300px);
+  opacity: 0.8;
+}
+.register:hover .registert,
+.register:active .registert{
+  transform: translateY(-300px) translateX(-70px);
+  opacity: 0.8;
+}
+.registert{
+  color:#216353;
+  position: absolute;
+  font-family: 'Viga';
+  letter-spacing: 10px;
+  font-size: 100px;
+  transform: translateY(500px) translateX(-70px);
+  transition: 1s ease;
+  opacity: 0;
+}
+.register{
+  transform: translateY(100px);
+  text-decoration: none;
+
+}
+.button{
+  font-family: 'Viga';
+  color: #2c003e;
+}
+.button ion-icon{
+  width: 100px;
+  height: 100px;
+}
+
+.about{
+  width: 100%;
+  height: 90vh;
+  background:linear-gradient(to right,#552244,#596157,#5b8c5a);
+  color: #cfd186;
+  overflow: hidden;
+}
+.a-t{
+  color: #cfd186;
+  position:absolute;
+  font-family: 'Viga';
+  font-size: 300px;
+  letter-spacing: -10px;
+  transform: translateY(130px) translateX(50px) rotateZ(-20deg);
+  opacity: 0.3;
+}
+.contact{
+  width: 100%;
+  height: 100vh;
+  background:linear-gradient(to right,#deddfa,#dab8f3,#ea7ad7);
+  color: #ce0f3d;
+  overflow: hidden;
+}
+.c-t{
+  color: #ce0f3d;
+  position:absolute;
+  font-family: 'Viga';
+  font-size: 300px;
+  letter-spacing: -10px;
+  transform: translateY(130px) translateX(50px) rotateZ(-20deg);
+  opacity: 0.3;
+}
+footer{
+  background: #000;
+  color: #555;
+  height: 30vh;
+}
+.g{
+  padding-left: 30%;
+}
+.name{
+  position: absolute;
+  font-size: 30px;
+  transform: translateX(450px);
+}
+.num{
+  position: absolute;
+  font-size: 20px;
+  transform: translateX(450px) translateY(100px);
+  border: 1px solid black;
+}
+
+.cimg{
+  width: 400px;
+  height: 270px;
+}
+.info{
+  position: absolute;
+  transform: translateY(60px) translateX(800px);
+}
+.olc{
+  color: #000;
+}
+.olc:hover,.olc:active{
+  text-decoration: none;
+  color: #000;
+}
+.crent{
+  position: absolute;
+  font-size: 1px;
+  color: blue;
+  transform: translateX(500px) translateY(-230px);
+  transition: 1s ease;
+  opacity: 0;
+}
+
+.olc:hover .crent,.olc:active .crent{
+  font-size: 250px;
+  transform: translateX(460px) translateY(-360px);
+opacity: 0.6;
+}
+.sellin{
+  color:#3a3535;
+  text-decoration: none;
+  overflow: hidden;
+}
+.sellin:hover,.sellin:active{
+  color:#3a3535;
+  text-decoration: none;
+}
+.self{
+  height: 100vh;
+  width:100%;
+  background: linear-gradient(to right,#f4f4f4,#ff7315,#ffbd69);
+  color:#3a3535;
+}
+.fer{
+  position: absolute;
+  font-size: 600px;
+  color: #fff;
+  transform: translateY(50px) translateX(-510px) rotateZ(90deg);
+  opacity: 0;
+  letter-spacing: -10px;
+  transition: 2s ease;
+}
+.sellin:hover .fer,.sellin:active .fer{
+  transform: translateY(-650px) translateX(-10px) rotateZ(0deg);
+opacity: 0.5;
+}
+.rented{
+  height: 100vh;
+}

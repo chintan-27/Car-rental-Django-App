@@ -1,0 +1,53 @@
+
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>RENT A CAR!</title>
+
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
+  integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+  <link href='https://fonts.googleapis.com/css?family=Viga' rel='stylesheet'>
+
+  </head>
+  <body>
+    <nav class="navbar">
+      <a class="navbar-brand" href="">
+      <img src="{{STATIC_URL}}/static/images/carlogo1.png" alt="img" width="70" height="50">
+    </a>
+      <ul class="nav">
+        {% if user.is_authenticated %}
+        <li class="nav-item">
+            <a class="nav-link" href="#">Welcome, {{user.username}}</a>
+          </li>
+      <li class="nav-item">
+        <a class="nav-link active" href="{% url 'logout' %}">Logout</a>
+      </li>
+      {% endif %}
+      </ul>
+    </nav>
+    <center>
+    <h4> HEY BUDDY! You are almost there select a location as per your convenience</h4>
+<br><br>
+
+<table border="1">
+      <tr>
+        <th><center>Location</center></th>
+        <th><center>Select One</center></th>
+    </tr>
+    {% for i in LOC %}
+    <tr>
+      <td width="200" height="50"><center>{{ i.location}}</center></td>
+      <td width="200" height="50"><center><a href='/bill/{{i.id}}'>I BELONG HERE!</a></center></td>
+    </tr>
+    {% endfor %}
+
+</center>
+  </body>
+  <style>
+  body {
+    font-family: 'Viga';
+  }
+
+  </style>
+</html>

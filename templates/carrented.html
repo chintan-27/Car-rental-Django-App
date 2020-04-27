@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>RENT A CAR</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
+  integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+  <link href='https://fonts.googleapis.com/css?family=Viga' rel='stylesheet'>
+
+  </head>
+
+  <body>
+    <nav class="navbar">
+      <a class="navbar-brand" href="">
+      <img src="{{STATIC_URL}}/static/images/carlogo1.png" alt="img" width="70" height="50">
+    </a>
+      <ul class="nav">
+        {% if user.is_authenticated %}
+        <li class="nav-item">
+            <a class="nav-link" href="#">Welcome, {{user.username}}</a>
+          </li>
+      <li class="nav-item">
+        <a class="nav-link active" href="{% url 'logout' %}">Logout</a>
+      </li>
+      {% endif %}
+      </ul>
+    </nav>
+    <center>
+    <h2> Here Are your Ride details :</h2>
+<br><br>
+    {% block content %}
+    <div class="">
+      <table border="2" class="rounded shadow-lg p-3">
+    <tr>
+      <th width="250" height="100"><center>Car Name:</center></th>
+      <td width="250" height="100"><center>{{Rents.car_name}}</center></td>
+  </tr>
+  <tr>
+      <th width="250" height="100"><center>Car Color:</center></th>
+      <td width="250"><center>{{Rents.car_color}}</center></td>
+
+  </tr>
+  <tr>
+      <th width="250"><center>Fuel Type:</center></th>
+      <td width="250"><center>{{Rents.fuel_type}}</center></td>
+
+  </tr>
+  <tr>
+      <th width="250"><center>Transmission type:</center></th>
+      <td width="250"><center>{{Rents.transmission_type}}</center></td>
+
+  </tr>
+  <tr>
+      <th width="250"><center>Bill Amount:</center></th>
+      <td width="250"><center>{{Rents.costperday}}</center></td>
+
+  </tr>
+  <tr>
+      <th width="250"><center>CAR NUMBER:</center></th>
+      <td width="250"><center>{{Rents.car_num}}</center></td>
+
+  </tr>
+  <tr>
+      <th width="250"><center>DATE:</center></th>
+      <td width="250"><center>{{date}}</center></td>
+
+  </tr>
+  <tr>
+     <td width="250"><center>IMAGE:</center></td>
+     <td width="250"><center><img src='/media/{{ Rents.car_image }}' height="200" width="250"></center></td>
+
+  </tr>
+  </table>
+
+    </div>
+
+
+
+<br><br>
+      <a href="/rented/{{Rents.car_num}}/{{date}}" class="btn btn-info" role="button">RENT RIGHT NOW!</a>&nbsp&nbsp&nbsp&nbsp
+      <a href="{% url 'rent' %}" class="btn btn-info" role="button">GO BACK</a>
+      <br><br>
+
+      </center>
+{% endblock %}
+<style>
+body {
+  font-family: 'Viga';
+}
+
+
+</style>
+
+
+
+  </body>
+</html>

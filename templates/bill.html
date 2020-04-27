@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>RENT A CAR</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
+  integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+  <link href='https://fonts.googleapis.com/css?family=Viga' rel='stylesheet'>
+
+  </head>
+  <body>
+    <nav class="navbar">
+      <a class="navbar-brand" href="">
+      <img src="{{STATIC_URL}}/static/images/carlogo1.png" alt="img" width="70" height="50">
+    </a>
+      <ul class="nav">
+        {% if user.is_authenticated %}
+        <li class="nav-item">
+            <a class="nav-link" href="#">Welcome, {{user.username}}</a>
+          </li>
+      <li class="nav-item">
+        <a class="nav-link active" href="{% url 'logout' %}">Logout</a>
+      </li>
+      {% endif %}
+      </ul>
+    </nav>
+    <h2><center>HURRAY! YOUR CAR IS RENTED!</center></h2><br><br>
+    <center>
+    <div class="container">
+      <div class="jumbotron">
+    <h2> Here Are your Ride details :</h2>
+    {% block content %}
+       <h3><U>PICK UP LOCATION:    {{locates.pickup}}</U></h4>
+       <h4> Thank You for Renting from RENT NOW!You can Screenshot this and you will be able to find you rented cars on dashboard.</h4>
+       <h4> Have a Safe Journey!</h4>
+    </div>
+  </div>
+
+       <a href="{% url 'dashboard' %}" class="btn btn-info" role="button">GO BACK</a>
+       </center>
+    {% endblock %}
+  </body>
+  <style>
+  body {
+    font-family: 'Viga';
+  }
+
+  </style>
+</html>

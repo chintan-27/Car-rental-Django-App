@@ -1,0 +1,28 @@
+{% extends 'index.html' %}
+
+{% block content %}
+<div class="container"><br><br>
+  <h1 class="rt">Register Car</h1><br><br>
+  <div class="row">
+    <div class="col-md-3"></div>
+    <div class="form col-md-6 p-3 shadow-lg">
+      <form class="form-group" method="POST">
+        {% csrf_token %}
+        {{form.as_p}}
+        <br><button class="btn btn-primary"> REGISTER</button>
+      </form>
+    </div>
+  <div class="col-md-3"></div>
+  </div><br><br>
+</div>
+<style >
+  .btn{
+    margin-left:220px;
+  }
+  .rt{
+    font-family:'Viga';
+    font-size:50px;
+    margin-left:35%;
+  }
+</style>
+{% endblock %}
